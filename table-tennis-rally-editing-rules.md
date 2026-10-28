@@ -7,14 +7,14 @@ Unless I explicitly change or add instructions, always use the following rules a
 
 ## Keep
 - Start each point about 1 second before the server tosses the ball
-- End each point about 1 second after the point is over (ball hits the floor, goes out, hits the net, or is missed)
-- Keep the players' brief reaction right after winning a point (no longer than 2 seconds)
+- End each point using the "Where to end each clip" section below
+- Keep the players' brief reaction right after winning a point (no longer than 2 seconds), except when the umpire/scoreboard ending rule below requires a longer clip
 
 ## Remove
 - Picking up the ball, walking to retrieve it, passing it back
 - Players wiping their hands, face, or paddle with a towel
 - Timeouts, breaks between games, and switching sides
-- Umpire announcing the score, players walking around, adjusting the table
+- Umpire announcing the score (except the part kept by the umpire/scoreboard ending rule below), players walking around, adjusting the table
 - Replays, crowd close-ups, ads, or empty shots
 
 ## How to detect the end of a point
@@ -25,13 +25,23 @@ Use these signals in order of reliability:
    - Let: the umpire raises a hand above the head and calls "let". The scoreboard does NOT change.
 3. Player movement (supporting signal): players stand up from the ready stance, turn away, walk off, or go to retrieve the ball.
 
-Timing rules:
-- Umpire signals and scoreboard flips usually happen 1–3 seconds AFTER the point actually ends. Use them only to confirm that the point is over and who won it.
-- Then go back to the last hit, or the last moment players were in live play, and set the end point 1 second after that moment.
+## Where to end each clip
+Case A — the umpire and/or the scoreboard can be seen and their action can be identified:
+- The point is NOT over until the umpire raises the hand AND/OR the scoreboard is flipped.
+- If both happen, use whichever happens LATER.
+- End the clip 1.5 seconds after that moment.
+- Umpire signals and scoreboard flips usually happen 1–3 seconds after the last hit, so these clips will be longer. That is intended.
+
+Case B — the umpire and scoreboard cannot be seen, or their action cannot be identified:
+- Go back to the last hit, or the last moment players were in live play, and end the clip 1 second after that moment.
+- Umpire signals seen only partly may still be used to confirm that the point is over and who won it.
+
+For every clip, state in the final list whether Case A or Case B was used.
 
 ## Lets (serve or rally replayed)
 - If the umpire signals but the scoreboard does not change, treat it as a let.
 - By default, keep the let rally and mark its timestamp for me to review.
+- For a let in Case A, end the let clip 1.5 seconds after the umpire's let signal.
 
 ## Noise from other tables
 - Only judge play at the main table in the frame. Ignore hit sounds and player movement from neighboring tables.
