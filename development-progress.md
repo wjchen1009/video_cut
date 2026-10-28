@@ -37,7 +37,7 @@ curl -sSL -o <檔名> "https://drive.usercontent.google.com/download?id=<檔案I
 - 只靠聲音判斷會被隔壁桌誤導（IMG_0453 的 40–43 秒）。
 
 ## 任務清單（第 1 階段）
-- [ ] 1. 建立專案架構：資料夾結構、`requirements.txt`、簡短 README、指令入口程式；能讀取影片並印出基本資訊（長度、解析度、影格率、旋轉、有無聲音）。
+- [x] 1. 建立專案架構：資料夾結構、`requirements.txt`、簡短 README、指令入口程式；能讀取影片並印出基本資訊（長度、解析度、影格率、旋轉、有無聲音）。
 - [ ] 2. 剪接輸出：輸入多段時間區間，一段一段編碼後接起來，硬切、維持畫質與色彩範圍。用短片段測試。
 - [ ] 3. 時間碼清單輸出：CSV 與易讀文字檔，包含原影片與剪輯版時間。
 - [ ] 4. 球桌標定設定檔：定義四個角的設定格式（JSON），能存取；能輸出一張參考畫面方便使用者看座標。
@@ -54,3 +54,11 @@ curl -sSL -o <檔名> "https://drive.usercontent.google.com/download?id=<檔案I
 
 ## 工作紀錄
 （每完成一個任務，在這裡新增一筆）
+
+### 任務 1（完成）
+- 建立 `rally_editor/` 套件（`cli.py`、`video_info.py`、`ffmpeg_tools.py`）、`requirements.txt`（目前只用標準函式庫）、`README.md`、`.gitignore`（排除影片檔）。
+- 指令：`python -m rally_editor info <影片> [--json]`。
+- 測試結果：IMG_0453.mov → 60.188 秒、1920×1080、29.973 fps、旋轉 0°、有聲音；Test.mp4 → 41.665 秒、編碼 1126×2436（顯示 2436×1126）、59.561 fps（平均，r_frame_rate 為 60）、旋轉 270°（順時針）、yuvj420p 全範圍、聲音：無。
+- 注意：Test.mp4 其實**有 aac 音軌但全靜音**（-91 dB），所以「有無聲音」用 volumedetect 判斷（最大音量 < -80 dB 視為無聲音）。`audio_track` 欄位記錄是否有音軌。
+- 旋轉角度統一用「順時針」表示（ffprobe display matrix 的 rotation 是逆時針，已轉換）。ffmpeg 解碼時預設會自動旋轉。
+- Test.mp4 是螢幕錄影，影格率可能不固定（平均 59.56），之後取時間要用時間戳，不要用「格數 ÷ 60」。

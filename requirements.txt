@@ -1,0 +1,3 @@
+# 第 1 階段（指令版）
+# 目前只用 Python 標準函式庫；影片處理需要系統上有 ffmpeg / ffprobe（加入 PATH，或設定環境變數 FFMPEG_DIR）。
+# 之後的任務會在這裡加入：numpy（聲音分析）、mediapipe（姿勢偵測）等。
